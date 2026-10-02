@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="PJ Stephen Paul Ministries — God is Love. Love God. Love People."
+    >
+
+    <meta name="theme-color" content="#071a33">
+
+    <title>PJ Stephen Paul Ministries | God Is Love</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', path='css/style.css') }}"
+    >
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+
+        <nav class="navbar">
+
+            <a href="#home" class="brand">
+
+                <img
+                    src="{{ url_for('static', path='images/logo.png') }}"
+                    alt="PJ Stephen Paul Ministries Logo"
+                    class="brand-logo"
+                >
+
+                <span class="brand-name">
+                    PJ STEPHEN PAUL MINISTRIES
+                </span>
+
+            </a>
+
+            <div class="nav-links">
+
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#ministries">Ministries</a>
+                <a href="#messages">Messages</a>
+                <a href="#daily-promise">Daily Promise</a>
+                <a href="#live">Live</a>
+                <a href="#testimonies">Testimonies</a>
+                <a href="/locations">Locations</a>
+                <a href="#contact">Contact</a>
+
+            </div>
+
+            <div class="nav-actions">
+
+                <button
+                    class="language-selector"
+                    type="button"
+                    id="languageSelector"
+                    aria-label="Select language"
+                    aria-expanded="false"
+                >
+                    ENGLISH
+                    <span>▼</span>
+                </button>
+
+                <a href="#prayer" class="prayer-button">
+                    PRAYER REQUEST
+                </a>
+
+            </div>
+
+            <button
+                class="mobile-menu-button"
+                type="button"
+                id="mobileMenuButton"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <!-- LANGUAGE MENU -->
+    <div
+        class="language-menu"
+        id="languageMenu"
+        aria-hidden="true"
+    >
+
+        <button type="button" data-language="en">
+            English
+        </button>
+
+        <button type="button" data-language="te">
+            తెలుగు
+        </button>
+
+        <button type="button" data-language="hi">
+            हिन्दी
+        </button>
+
+    </div>
+
+
+    <main>
+
+        <!-- OPENING VERSE -->
+        <section class="opening-verse">
+
+            <div class="section-container">
+
+                <span class="verse-reference">
+                    HEBREWS 11:6
+                </span>
+
+                <blockquote>
+                    “And without faith it is impossible to please
+                    him, for whoever would draw near to God must
+                    believe that he exists and that he rewards
+                    those who seek him.”
+                </blockquote>
+
+            </div>
+
+        </section>
+
+
+        <!-- HERO -->
+        <section class="hero" id="home">
+
+            <div class="hero-background">
+
+                <img
+                    src="{{ url_for('static', path='images/hero.jpg') }}"
+                    alt="PJ Stephen Paul Ministries"
+                    class="hero-image"
+                >
+
+                <div class="hero-overlay"></div>
+
+            </div>
+
+            <div class="hero-content">
+
+                <span class="hero-eyebrow">
+                    PJ STEPHEN PAUL MINISTRIES
+                </span>
+
+                <h1>
+                    GOD IS LOVE
+                </h1>
+
+                <p class="hero-tagline">
+                    Love God • Love People
+                </p>
+
+                <div class="hero-actions">
+
+                    <a href="#live" class="button button-primary">
+                        WATCH LIVE
+                    </a>
+
+                    <a href="#about" class="button button-secondary">
+                        EXPLORE THE MINISTRY
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT -->
+        <section class="about-section" id="about">
+
+            <div class="section-container">
+
+                <span class="section-label">
+                    ABOUT THE MINISTRY
+                </span>
+
+                <h2>
+                    A Ministry Built on the Love of God
+                </h2>
+
+                <p class="section-intro">
+                    PJ Stephen Paul Ministries exists to share
+                    the love of Jesus Christ, proclaim the Word
+                    of God, strengthen families, and reach people
+                    with the hope of the Gospel.
+                </p>
+
+                <a href="/about" class="text-button">
+                    LEARN MORE
+                </a>
+
+            </div>
+
+        </section>
+
+
+   <!-- DAILY PROMISE -->
+<section
+    class="daily-promise-section"
+    id="daily-promise"
+>
+
+    <div class="section-container">
+
+        <span class="section-label">
+            DAILY PROMISE
+        </span>
+
+        <h2>
+            Start Your Day With God's Word
+        </h2>
+
+        <p class="section-intro">
+            Watch the latest Daily Promise from
+            PJ Stephen Paul Ministries.
+        </p>
+
+        <a
+            href="https://www.youtube.com/@pjstephenpaul"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button button-primary"
+        >
+            WATCH TODAY'S PROMISE
+        </a>
+
+    </div>
+
+</section> 
+
+
+        <!-- PRAYER -->
+        <section class="prayer-section" id="prayer">
+
+            <div class="section-container">
+
+                <blockquote>
+                    “Call to me, and I will answer you.”
+                </blockquote>
+
+                <span class="verse-reference">
+                    — JEREMIAH 33:3
+                </span>
+
+                <p>
+                    If you would like us to pray for you,
+                    share your prayer request with us.
+                </p>
+
+                <a
+                    href="/prayer-request"
+                    class="button button-primary"
+                >
+                    SHARE YOUR PRAYER REQUEST
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- MESSAGES -->
+        <section class="messages-section" id="messages">
+
+            <div class="section-container">
+
+                <span class="section-label">
+     <!-- MESSAGES -->
+<section class="messages-section" id="messages">
+
+    <div class="section-container">
+
+        <span class="section-label">
+            MESSAGES
+        </span>
+
+        <h2>
+            Messages That Speak to Life
+        </h2>
+
+        <p class="section-intro">
+            Watch biblical messages from PJ Stephen Paul Ministries
+            and grow in God's Word.
+        </p>
+
+        <div class="youtube-feature">
+
+            <div class="youtube-icon">
+                ▶
+            </div>
+
+            <div class="youtube-feature-content">
+
+                <span class="card-category">
+                    YOUTUBE MESSAGES
+                </span>
+
+                <h3>
+                    Watch Our Latest Messages
+                </h3>
+
+                <p>
+                    Explore messages, sermons and teachings from
+                    PJ Stephen Paul Ministries on YouTube.
+                </p>
+
+                <a
+                    href="https://www.youtube.com/@pjstephenpaul"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="button button-primary"
+                >
+                    WATCH MESSAGES
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>              
+
+
+    <!-- LIVE SERVICES -->
+<section class="live-section" id="live">
+
+    <div class="section-container">
+
+        <span class="section-label">
+            LIVE SERVICES
+        </span>
+
+        <h2>
+            Join Us Live
+        </h2>
+
+        <p class="section-intro">
+            Worship with us and join our services online.
+        </p>
+
+        <div class="live-player">
+
+            <div class="live-content">
+
+                <span class="live-status">
+                    ● LIVE SERVICES
+                </span>
+
+                <h3>
+                    PJ Stephen Paul Ministries
+                </h3>
+
+                <p>
+                    When a live service is available, it can be
+                    watched directly through our YouTube channel.
+                </p>
+
+                <a
+                    href="https://www.youtube.com/@pjstephenpaul"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="button button-primary"
+                >
+                    WATCH LIVE ON YOUTUBE
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+        <!-- TESTIMONIES -->
+        <section
+            class="testimonies-section"
+            id="testimonies"
+        >
+
+            <div class="section-container">
+
+                <span class="section-label">
+                    TESTIMONIES
+                </span>
+
+                <h2>
+                    Stories of God's Faithfulness
+                </h2>
+
+                <p class="section-intro">
+                    Every testimony is a reminder of God's grace,
+                    faithfulness and transforming power.
+                </p>
+
+              
+                           
+                    >
+                        SHARE YOUR TESTIMONY
+                    </a>
+
+                    <a
+                        href="#"
+                        class="button button-secondary"
+                    >
+                        SEND THROUGH WHATSAPP
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MINISTRIES -->
+        <section
+            class="ministries-section"
+            id="ministries"
+        >
+
+            <div class="section-container">
+
+                <span class="section-label">
+                    MINISTRIES
+                </span>
+
+                <h2>
+                    Ministry in Action
+                </h2>
+
+                <p class="section-intro">
+                    Serving people, strengthening families and
+                    reaching communities with the love of Christ.
+                </p>
+
+                <div class="ministries-grid">
+
+                    <article class="ministry-card">
+
+                        <div class="ministry-icon">
+                            01
+                        </div>
+
+                        <h3>
+                            pjspaul foundation 
+                        
+                        </h3>
+
+                        <p>
+                           -----
+                        </p>
+
+                        <a href="#">
+                            LEARN MORE
+                        </a>
+
+                    </article>
+
+
+                    <article class="ministry-card">
+
+                        <div class="ministry-icon">
+                            02
+                        </div>
+
+                        <h3>
+                            Ministry 02
+                        </h3>
+
+                        <p>
+                            children's ministry
+                        </p>
+
+                        <a href="#">
+                            LEARN MORE
+                        </a>
+
+                    </article>
+
+
+                    <article class="ministry-card">
+
+                        <div class="ministry-icon">
+                            03
+                        </div>
+
+                        <h3>
+                            Ministry 03
+                        </h3>
+
+                        <p>
+                            youth ministry
+                        </p>
+
+                        <a href="#">
+                            LEARN MORE
+                        </a>
+
+                    </article>
+
+                </div>
+
+                <div class="ministries-count">
+                    24 MINISTRIES
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer" id="contact">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <img
+                    src="{{ url_for('static', path='images/logo.png') }}"
+                    alt="PJ Stephen Paul Ministries Logo"
+                    class="footer-logo"
+                >
+
+                <h2>
+                    PJ STEPHEN PAUL MINISTRIES
+                </h2>
+
+                <p>
+                    God is Love • Love God • Love People
+                </p>
+
+            </div>
+<a
+    href="https://www.youtube.com/@pjstephenpaul"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="youtube-channel-button"
+>
+    ▶ WATCH US ON YOUTUBE
+</a>
+
+            <div class="footer-links">
+
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#ministries">Ministries</a>
+                <a href="#messages">Messages</a>
+                <a href="#daily-promise">Daily Promise</a>
+                <a href="#live">Live Services</a>
+                <a href="#testimonies">Testimonies</a>
+                <a href="/locations">Locations</a>
+                <a href="#prayer">Prayer Request</a>
+                <a href="#contact">Contact</a>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    © PJ Stephen Paul Ministries.
+                    All Rights Reserved.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script
+        src="{{ url_for('static', path='js/script.js') }}"
+    ></script>
+
+</body>
+
+</html>

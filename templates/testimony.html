@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Share Your Testimony | PJ Stephen Paul Ministries</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', path='css/style.css') }}"
+    >
+</head>
+
+<body>
+
+    <main class="testimony-page">
+
+        <section class="testimony-container">
+
+            <a href="/" class="back-home">
+                ← Back to Home
+            </a>
+
+            <div class="testimony-header">
+
+                <span class="section-label">
+                    TESTIMONY
+                </span>
+
+                <h1>
+                    Share Your Testimony
+                </h1>
+
+                <p>
+                    Has God done something wonderful in your life?
+                    We would love to hear your testimony and celebrate
+                    what God has done.
+                </p>
+
+            </div>
+
+
+            <form
+                class="testimony-form"
+                action="/submit-testimony"
+                method="POST"
+                enctype="multipart/form-data"
+            >
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Your Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="testimony">
+                        Your Testimony
+                    </label>
+
+                    <textarea
+                        id="testimony"
+                        name="testimony"
+                        rows="7"
+                        placeholder="Share what God has done in your life..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="video">
+                        Upload Testimony Video
+                    </label>
+
+                    <input
+                        type="file"
+                        id="video"
+                        name="video"
+                        accept="video/*"
+                    >
+
+                    <small>
+                        You can upload a video of your testimony.
+                    </small>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="testimony-submit"
+                >
+                    Submit Your Testimony
+                </button>
+
+            </form>
+
+
+            <div class="whatsapp-section">
+
+                <div class="whatsapp-line"></div>
+
+                <span>
+                    OR
+                </span>
+
+                <div class="whatsapp-line"></div>
+
+                <p>
+                    Prefer to send your testimony through WhatsApp?
+                </p>
+
+                <a
+                    href="https://wa.me/"
+                    class="whatsapp-button"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Send Through WhatsApp
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
