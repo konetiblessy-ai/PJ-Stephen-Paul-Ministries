@@ -1,6 +1,7 @@
 /* =========================================================
    PJ STEPHEN PAUL MINISTRIES
    Premium Ministry Website
+   Responsive + Mobile Friendly
    ========================================================= */
 
 :root {
@@ -22,7 +23,6 @@
 
     --glass: rgba(255, 255, 255, 0.09);
     --glass-border: rgba(255, 255, 255, 0.17);
-
     --border: rgba(7, 26, 51, 0.10);
 
     --shadow: 0 20px 60px rgba(4, 18, 37, 0.12);
@@ -30,7 +30,6 @@
 
     --radius: 24px;
     --radius-large: 34px;
-
     --max-width: 1180px;
 }
 
@@ -47,6 +46,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -125,6 +125,7 @@ a {
 
 .site-header {
     position: fixed;
+
     top: 0;
     left: 0;
     right: 0;
@@ -160,6 +161,7 @@ a {
 
 .navbar {
     width: min(100%, 1380px);
+
     min-height: 68px;
 
     margin: 0 auto;
@@ -364,6 +366,7 @@ a {
 
 .prayer-button {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
@@ -407,7 +410,7 @@ a {
 
 
 /* =========================================================
-   MOBILE MENU
+   MOBILE MENU BUTTON
    ========================================================= */
 
 .mobile-menu-button {
@@ -417,6 +420,7 @@ a {
     height: 45px;
 
     flex-direction: column;
+
     align-items: center;
     justify-content: center;
 
@@ -433,6 +437,8 @@ a {
     border-radius: 13px;
 
     cursor: pointer;
+
+    flex-shrink: 0;
 }
 
 .mobile-menu-button span {
@@ -442,6 +448,26 @@ a {
     background: #ffffff;
 
     border-radius: 10px;
+
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+}
+
+.mobile-menu-button.active span:nth-child(1) {
+    transform:
+        translateY(7px)
+        rotate(45deg);
+}
+
+.mobile-menu-button.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-button.active span:nth-child(3) {
+    transform:
+        translateY(-7px)
+        rotate(-45deg);
 }
 
 
@@ -451,76 +477,55 @@ a {
 
 .language-menu {
     position: fixed;
-
     top: 88px;
     right: 170px;
 
-    z-index: 1100;
+    display: none;
 
-    width: 145px;
-
+    min-width: 150px;
     padding: 8px;
 
-    opacity: 0;
-    visibility: hidden;
+    background: var(--navy-soft);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: 10px;
 
-    transform:
-        translateY(-8px)
-        scale(0.98);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
 
-    background:
-        rgba(7, 26, 51, 0.96);
-
-    border:
-        1px solid rgba(255, 255, 255, 0.13);
-
-    border-radius: 16px;
-
-    box-shadow:
-        0 20px 50px rgba(0, 0, 0, 0.25);
-
-    backdrop-filter: blur(20px);
-
-    transition:
-        opacity 0.25s ease,
-        visibility 0.25s ease,
-        transform 0.25s ease;
+    z-index: 9999;
 }
 
 .language-menu.show {
-    opacity: 1;
-    visibility: visible;
-
-    transform:
-        translateY(0)
-        scale(1);
+    display: flex;
+    flex-direction: column;
 }
 
 .language-menu button {
     width: 100%;
 
-    padding: 10px 12px;
+    padding: 12px 14px;
 
-    color: rgba(255, 255, 255, 0.76);
+    border: none;
+    border-radius: 7px;
 
     background: transparent;
+    color: var(--white);
 
-    border-radius: 10px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
 
     text-align: left;
 
     cursor: pointer;
 
     transition:
-        color 0.2s ease,
-        background 0.2s ease;
+        background 0.2s ease,
+        color 0.2s ease;
 }
 
 .language-menu button:hover {
-    color: #ffffff;
-
-    background:
-        rgba(212, 173, 99, 0.12);
+    background: rgba(212, 175, 55, 0.12);
+    color: var(--gold-light);
 }
 
 
@@ -529,10 +534,11 @@ a {
    ========================================================= */
 
 .section-container {
-    width: min(
-        calc(100% - 48px),
-        var(--max-width)
-    );
+    width:
+        min(
+            calc(100% - 48px),
+            var(--max-width)
+        );
 
     margin: 0 auto;
 }
@@ -616,11 +622,12 @@ a {
         "Times New Roman",
         serif;
 
-    font-size: clamp(
-        1.05rem,
-        2vw,
-        1.42rem
-    );
+    font-size:
+        clamp(
+            1.05rem,
+            2vw,
+            1.42rem
+        );
 
     font-style: italic;
 
@@ -668,6 +675,7 @@ a {
 }
 
 @keyframes heroImage {
+
     from {
         transform: scale(1.02);
     }
@@ -719,23 +727,28 @@ a {
 
     z-index: 5;
 
-    width: min(
-        calc(100% - 48px),
-        var(--max-width)
-    );
+    width:
+        min(
+            calc(100% - 48px),
+            var(--max-width)
+        );
 
     margin: 0 auto;
 
-    padding: 95px 0 70px;
+    padding:
+        95px 0
+        70px;
 }
 
 .hero-eyebrow {
     display: inline-flex;
+
     align-items: center;
 
     margin-bottom: 20px;
 
-    padding: 9px 15px;
+    padding:
+        9px 15px;
 
     color: var(--gold-light);
 
@@ -767,11 +780,12 @@ a {
         "Times New Roman",
         serif;
 
-    font-size: clamp(
-        4rem,
-        8vw,
-        7.5rem
-    );
+    font-size:
+        clamp(
+            4rem,
+            8vw,
+            7.5rem
+        );
 
     font-weight: 500;
 
@@ -793,17 +807,19 @@ a {
         "Times New Roman",
         serif;
 
-    font-size: clamp(
-        1.3rem,
-        2.7vw,
-        2rem
-    );
+    font-size:
+        clamp(
+            1.3rem,
+            2.7vw,
+            2rem
+        );
 
     font-style: italic;
 }
 
 .hero-actions {
     display: flex;
+
     align-items: center;
 
     flex-wrap: wrap;
@@ -820,6 +836,7 @@ a {
     position: relative;
 
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
@@ -865,7 +882,8 @@ a {
 
     transform: skewX(-20deg);
 
-    transition: left 0.55s ease;
+    transition:
+        left 0.55s ease;
 }
 
 .button:hover::before {
@@ -920,7 +938,7 @@ a {
 
 
 /* =========================================================
-   SHARED SECTION STYLING
+   SHARED SECTIONS
    ========================================================= */
 
 .about-section,
@@ -932,7 +950,8 @@ a {
 .ministries-section {
     position: relative;
 
-    padding: 115px 0;
+    padding:
+        115px 0;
 }
 
 .section-label {
@@ -968,11 +987,12 @@ a {
         "Times New Roman",
         serif;
 
-    font-size: clamp(
-        2.3rem,
-        4.5vw,
-        4rem
-    );
+    font-size:
+        clamp(
+            2.3rem,
+            4.5vw,
+            4rem
+        );
 
     font-weight: 500;
 
@@ -1030,15 +1050,18 @@ a {
 
 .text-button {
     display: inline-flex;
+
     align-items: center;
 
     min-height: 48px;
 
-    padding: 0 20px;
+    padding:
+        0 20px;
 
     color: var(--navy);
 
-    background: rgba(212, 173, 99, 0.10);
+    background:
+        rgba(212, 173, 99, 0.10);
 
     border:
         1px solid rgba(169, 130, 62, 0.25);
@@ -1111,7 +1134,8 @@ a {
 }
 
 .daily-promise-section .section-intro {
-    color: rgba(255, 255, 255, 0.70);
+    color:
+        rgba(255, 255, 255, 0.70);
 }
 
 
@@ -1139,11 +1163,12 @@ a {
         "Times New Roman",
         serif;
 
-    font-size: clamp(
-        1.8rem,
-        4vw,
-        3.1rem
-    );
+    font-size:
+        clamp(
+            1.8rem,
+            4vw,
+            3.1rem
+        );
 
     font-style: italic;
 
@@ -1219,10 +1244,12 @@ a {
     min-height: 220px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
-    color: rgba(255, 255, 255, 0.75);
+    color:
+        rgba(255, 255, 255, 0.75);
 
     background:
         linear-gradient(
@@ -1259,6 +1286,7 @@ a {
     height: 58px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -1331,23 +1359,84 @@ a {
     font-weight: 500;
 }
 
-.messages-section .button-secondary {
-    margin-top: 32px;
+
+/* =========================================================
+   MESSAGES
+   ========================================================= */
+
+.youtube-feature {
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    margin-top: 42px;
+
+    padding: 35px;
+
+    background: #ffffff;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: var(--radius-large);
+
+    box-shadow:
+        0 18px 55px rgba(4, 18, 37, 0.08);
+}
+
+.youtube-icon {
+    width: 82px;
+    height: 82px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
 
     color: var(--navy);
 
-    background: transparent;
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold-light),
+            var(--gold)
+        );
 
-    border-color:
-        rgba(7, 26, 51, 0.20);
+    border-radius: 22px;
+
+    font-size: 1.3rem;
+
+    box-shadow:
+        0 12px 30px rgba(212, 173, 99, 0.20);
 }
 
-.messages-section .button-secondary:hover {
-    background:
-        rgba(7, 26, 51, 0.05);
+.youtube-feature-content {
+    min-width: 0;
+}
 
-    border-color:
-        rgba(7, 26, 51, 0.35);
+.youtube-feature-content h3 {
+    margin-bottom: 8px;
+
+    color: var(--navy);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 1.7rem;
+
+    font-weight: 500;
+}
+
+.youtube-feature-content p {
+    margin-bottom: 24px;
+
+    color: var(--muted);
 }
 
 
@@ -1375,7 +1464,8 @@ a {
 }
 
 .live-section .section-intro {
-    color: rgba(255, 255, 255, 0.70);
+    color:
+        rgba(255, 255, 255, 0.70);
 }
 
 .live-player {
@@ -1395,19 +1485,20 @@ a {
         0 30px 80px rgba(0, 0, 0, 0.20);
 }
 
-.live-placeholder {
-    min-height: 430px;
+.live-content {
+    padding: 55px;
+
+    min-height: 300px;
 
     display: flex;
+
     flex-direction: column;
-    align-items: center;
+
+    align-items: flex-start;
+
     justify-content: center;
 
-    gap: 16px;
-
     border-radius: 24px;
-
-    color: rgba(255, 255, 255, 0.60);
 
     background:
         radial-gradient(
@@ -1416,20 +1507,18 @@ a {
             transparent 45%
         ),
         rgba(0, 0, 0, 0.18);
-
-    font-size: 0.68rem;
-    font-weight: 800;
-
-    letter-spacing: 0.18em;
 }
 
 .live-status {
     display: inline-flex;
+
     align-items: center;
 
     gap: 8px;
 
     padding: 7px 13px;
+
+    margin-bottom: 18px;
 
     color: #ffffff;
 
@@ -1444,8 +1533,28 @@ a {
     font-size: 0.65rem;
 }
 
-.live-status:first-letter {
-    color: #ff7777;
+.live-content h3 {
+    margin-bottom: 10px;
+
+    color: #ffffff;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 1.7rem;
+
+    font-weight: 500;
+}
+
+.live-content p {
+    max-width: 650px;
+
+    margin-bottom: 25px;
+
+    color:
+        rgba(255, 255, 255, 0.65);
 }
 
 
@@ -1609,6 +1718,7 @@ a {
     height: 48px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -1694,7 +1804,8 @@ a {
 
     margin-top: 35px;
 
-    padding: 9px 16px;
+    padding:
+        9px 16px;
 
     color: var(--gold-dark);
 
@@ -1762,10 +1873,11 @@ a {
 
     z-index: 2;
 
-    width: min(
-        calc(100% - 48px),
-        var(--max-width)
-    );
+    width:
+        min(
+            calc(100% - 48px),
+            var(--max-width)
+        );
 
     margin: 0 auto;
 }
@@ -1825,6 +1937,46 @@ a {
     font-style: italic;
 }
 
+.youtube-channel-button {
+    display: flex;
+
+    width: fit-content;
+
+    margin:
+        0 auto
+        30px;
+
+    padding:
+        11px 18px;
+
+    color: var(--navy);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold-light),
+            var(--gold)
+        );
+
+    border-radius: 999px;
+
+    font-size: 0.68rem;
+    font-weight: 800;
+
+    letter-spacing: 0.05em;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.youtube-channel-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(212, 173, 99, 0.25);
+}
+
 .footer-links {
     display: flex;
 
@@ -1833,7 +1985,8 @@ a {
 
     flex-wrap: wrap;
 
-    gap: 9px 22px;
+    gap:
+        9px 22px;
 
     padding:
         25px 0;
@@ -1846,7 +1999,8 @@ a {
 }
 
 .footer-links a {
-    color: rgba(255, 255, 255, 0.58);
+    color:
+        rgba(255, 255, 255, 0.58);
 
     font-size: 0.78rem;
 
@@ -1866,14 +2020,15 @@ a {
 
     text-align: center;
 
-    color: rgba(255, 255, 255, 0.40);
+    color:
+        rgba(255, 255, 255, 0.40);
 
     font-size: 0.72rem;
 }
 
 
 /* =========================================================
-   RESPONSIVE — 1150
+   RESPONSIVE — 1150px
    ========================================================= */
 
 @media (max-width: 1150px) {
@@ -1901,22 +2056,92 @@ a {
 
         font-size: 0.61rem;
     }
-
 }
 
 
 /* =========================================================
-   RESPONSIVE — 950
+   RESPONSIVE — 950px
    ========================================================= */
 
 @media (max-width: 950px) {
 
     .nav-links {
+        position: absolute;
+
+        top: calc(100% + 10px);
+
+        left: 15px;
+        right: 15px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+
+        margin: 0;
+
+        padding: 10px;
+
+        opacity: 0;
+        visibility: hidden;
+
+        transform:
+            translateY(-10px);
+
+        background:
+            rgba(4, 18, 37, 0.97);
+
+        border:
+            1px solid rgba(255, 255, 255, 0.12);
+
+        border-radius: 20px;
+
+        box-shadow:
+            0 25px 60px rgba(0, 0, 0, 0.28);
+
+        backdrop-filter: blur(22px);
+
+        transition:
+            opacity 0.25s ease,
+            visibility 0.25s ease,
+            transform 0.25s ease;
+    }
+
+    .nav-links.mobile-open {
+        opacity: 1;
+        visibility: visible;
+
+        transform:
+            translateY(0);
+    }
+
+    .nav-links a {
+        display: flex;
+
+        align-items: center;
+
+        min-height: 48px;
+
+        padding:
+            0 15px;
+
+        border-radius: 12px;
+
+        font-size: 0.78rem;
+    }
+
+    .nav-links a::after {
         display: none;
     }
 
-    .nav-actions {
-        margin-left: auto;
+    .nav-links a:hover {
+        background:
+            rgba(212, 173, 99, 0.10);
+
+        transform: none;
     }
 
     .mobile-menu-button {
@@ -1925,7 +2150,8 @@ a {
 
     .content-grid,
     .ministries-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:
+            1fr 1fr;
     }
 
     .hero {
@@ -1933,11 +2159,12 @@ a {
     }
 
     .hero h1 {
-        font-size: clamp(
-            4rem,
-            11vw,
-            6.5rem
-        );
+        font-size:
+            clamp(
+                4rem,
+                11vw,
+                6.5rem
+            );
     }
 
     .language-menu {
@@ -1947,7 +2174,7 @@ a {
 
 
 /* =========================================================
-   RESPONSIVE — 700
+   RESPONSIVE — 700px
    ========================================================= */
 
 @media (max-width: 700px) {
@@ -1959,6 +2186,16 @@ a {
 
     .navbar {
         min-height: 60px;
+
+        gap: 8px;
+    }
+
+    .brand {
+        min-width: 0;
+
+        flex: 1;
+
+        gap: 9px;
     }
 
     .brand-logo {
@@ -1972,24 +2209,45 @@ a {
         font-size: 0.62rem;
 
         letter-spacing: 0.07em;
+
+        white-space: normal;
+    }
+
+    .nav-actions {
+        margin-left: auto;
+
+        gap: 6px;
     }
 
     .language-selector {
-        display: none;
-    }
+        display: inline-flex;
 
-    .prayer-button {
+        align-items: center;
+        justify-content: center;
+
         min-height: 37px;
 
         padding:
-            0 12px;
+            0 10px;
 
         font-size: 0.57rem;
+    }
+
+    .prayer-button {
+        display: none;
     }
 
     .mobile-menu-button {
         width: 41px;
         height: 41px;
+    }
+
+    .language-menu {
+        top: 72px;
+
+        right: 15px;
+
+        width: 145px;
     }
 
     .opening-verse {
@@ -2000,6 +2258,12 @@ a {
 
     .opening-verse blockquote {
         font-size: 1rem;
+
+        line-height: 1.65;
+    }
+
+    .verse-reference {
+        letter-spacing: 0.18em;
     }
 
     .hero {
@@ -2007,10 +2271,11 @@ a {
     }
 
     .hero-content {
-        width: min(
-            calc(100% - 36px),
-            var(--max-width)
-        );
+        width:
+            min(
+                calc(100% - 36px),
+                var(--max-width)
+            );
 
         padding:
             100px 0
@@ -2018,11 +2283,16 @@ a {
     }
 
     .hero h1 {
-        font-size: clamp(
-            3.4rem,
-            16vw,
-            5.5rem
-        );
+        font-size:
+            clamp(
+                3.4rem,
+                16vw,
+                5.5rem
+            );
+
+        line-height: 0.95;
+
+        overflow-wrap: anywhere;
     }
 
     .hero-overlay {
@@ -2039,7 +2309,7 @@ a {
 
         flex-direction: column;
 
-        max-width: 290px;
+        width: min(100%, 290px);
     }
 
     .hero-actions .button {
@@ -2047,10 +2317,11 @@ a {
     }
 
     .section-container {
-        width: min(
-            calc(100% - 32px),
-            var(--max-width)
-        );
+        width:
+            min(
+                calc(100% - 32px),
+                var(--max-width)
+            );
     }
 
     .about-section,
@@ -2072,6 +2343,14 @@ a {
     .testimonies-section h2,
     .ministries-section h2 {
         font-size: 2.35rem;
+
+        overflow-wrap: anywhere;
+    }
+
+    .section-intro {
+        font-size: 0.95rem;
+
+        line-height: 1.8;
     }
 
     .content-grid,
@@ -2089,6 +2368,20 @@ a {
         min-height: 205px;
     }
 
+    .youtube-feature {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 25px;
+
+        gap: 20px;
+    }
+
+    .youtube-feature-content h3 {
+        font-size: 1.45rem;
+    }
+
     .live-player {
         margin-top: 30px;
 
@@ -2097,10 +2390,16 @@ a {
         border-radius: 22px;
     }
 
-    .live-placeholder {
+    .live-content {
         min-height: 300px;
 
+        padding: 30px 22px;
+
         border-radius: 17px;
+    }
+
+    .live-content h3 {
+        font-size: 1.45rem;
     }
 
     .section-actions {
@@ -2108,7 +2407,7 @@ a {
 
         align-items: stretch;
 
-        max-width: 330px;
+        width: min(100%, 330px);
     }
 
     .section-actions .button {
@@ -2116,33 +2415,68 @@ a {
     }
 
     .footer-container {
-        width: min(
-            calc(100% - 32px),
-            var(--max-width)
-        );
+        width:
+            min(
+                calc(100% - 32px),
+                var(--max-width)
+            );
     }
 
     .footer-links {
-        gap: 12px 18px;
+        gap:
+            12px 18px;
     }
-
 }
 
 
 /* =========================================================
-   RESPONSIVE — 480
+   RESPONSIVE — 480px
    ========================================================= */
 
 @media (max-width: 480px) {
 
-    .brand-name {
-        max-width: 125px;
-
-        font-size: 0.56rem;
+    .site-header {
+        padding:
+            8px 10px;
     }
 
-    .prayer-button {
-        display: none;
+    .navbar {
+        gap: 5px;
+    }
+
+    .brand {
+        gap: 7px;
+    }
+
+    .brand-logo {
+        width: 42px;
+        height: 42px;
+    }
+
+    .brand-name {
+        max-width: 105px;
+
+        font-size: 0.52rem;
+
+        letter-spacing: 0.05em;
+    }
+
+    .language-selector {
+        min-height: 35px;
+
+        padding:
+            0 8px;
+
+        font-size: 0.52rem;
+    }
+
+    .language-selector span {
+        margin-left: 3px;
+    }
+
+    .mobile-menu-button {
+        width: 39px;
+        height: 39px;
     }
 
     .hero {
@@ -2150,9 +2484,13 @@ a {
     }
 
     .hero-eyebrow {
+        max-width: 100%;
+
         font-size: 0.57rem;
 
         letter-spacing: 0.14em;
+
+        white-space: normal;
     }
 
     .hero-tagline {
@@ -2166,10 +2504,14 @@ a {
             0 18px;
 
         font-size: 0.70rem;
+
+        text-align: center;
     }
 
     .section-label {
         font-size: 0.61rem;
+
+        letter-spacing: 0.17em;
     }
 
     .about-section h2,
@@ -2186,15 +2528,187 @@ a {
         font-size: 1.65rem;
     }
 
+    .youtube-icon {
+        width: 68px;
+        height: 68px;
+
+        border-radius: 18px;
+    }
+
+    .youtube-feature {
+        border-radius: 20px;
+    }
+
     .ministry-card {
         padding: 26px;
     }
 
     .footer-brand h2 {
         font-size: 0.95rem;
+
+        letter-spacing: 0.07em;
+    }
+
+    .footer-brand p {
+        font-size: 0.85rem;
     }
 
     .footer-links a {
         font-size: 0.70rem;
     }
+
+    .footer-bottom {
+        font-size: 0.65rem;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES — 360px
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .brand-name {
+        max-width: 90px;
+
+        font-size: 0.48rem;
+    }
+
+    .language-selector {
+        padding:
+            0 7px;
+
+        font-size: 0.48rem;
+    }
+
+    .mobile-menu-button {
+        width: 37px;
+        height: 37px;
+    }
+
+    .hero h1 {
+        font-size: 3.1rem;
+    }
+
+    .hero-content {
+        width:
+            calc(100% - 28px);
+    }
+
+    .section-container {
+        width:
+            calc(100% - 28px);
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY / TOUCH
+   ========================================================= */
+
+@media (hover: none) {
+
+    .button:hover,
+    .text-button:hover,
+    .ministry-card:hover,
+    .content-card:hover,
+    .prayer-button:hover,
+    .language-selector:hover {
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+/* =========================================================
+   LANGUAGE SELECTOR - FINAL FIX
+   ========================================================= */
+
+.language-menu {
+    position: fixed !important;
+    top: 88px !important;
+    right: 170px !important;
+
+    display: none !important;
+
+    min-width: 150px !important;
+    padding: 8px !important;
+
+    background: var(--navy-soft) !important;
+
+    border: 1px solid rgba(212, 175, 55, 0.35) !important;
+    border-radius: 10px !important;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35) !important;
+
+    z-index: 999999 !important;
+}
+
+.language-menu.show {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.language-menu button {
+    display: block !important;
+
+    width: 100% !important;
+    padding: 12px 14px !important;
+
+    border: none !important;
+    border-radius: 7px !important;
+
+    background: transparent !important;
+    color: var(--white) !important;
+
+    font-family: inherit !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+
+    text-align: left !important;
+
+    cursor: pointer !important;
+}
+
+.language-menu button:hover {
+    background: rgba(212, 175, 55, 0.12) !important;
+    color: var(--gold-light) !important;
+}
+
+
+/* MOBILE LANGUAGE MENU */
+
+@media (max-width: 950px) {
+
+    .language-menu {
+        top: 82px !important;
+        right: 20px !important;
+    }
+
+}
+
+
+/* VERY SMALL PHONES */
+
+@media (max-width: 480px) {
+
+    .language-menu {
+        top: 76px !important;
+        right: 12px !important;
+        min-width: 140px !important;
+    }
+
 }
